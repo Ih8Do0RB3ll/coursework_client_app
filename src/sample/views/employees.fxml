@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.EmployeePageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.EmployeePageController">
     <SplitPane dividerPositions="0.7929" orientation="VERTICAL" prefHeight="400" prefWidth="600">
     <TableView fx:id="emp_table" prefHeight="337.0" prefWidth="600.0">
         <columns>
-            <TableColumn fx:id="emp_username" prefWidth="300.20001220703125" text="Username" />
-            <TableColumn fx:id="emp_department" prefWidth="299.79998779296875" text="Department" />
+            <TableColumn fx:id="emp_username" prefWidth="300.20001220703125" text="Имя пользователя" />
+            <TableColumn fx:id="emp_department" prefWidth="299.79998779296875" text="Департамент" />
         </columns>
     </TableView>
     <HBox layoutX="226.0" layoutY="358.0" prefHeight="14.0" prefWidth="238.0" spacing="10.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="15.0">
         <children>
-            <Button mnemonicParsing="false" text="Get Reports" onAction="#handleGetReports" />
-            <Button mnemonicParsing="false" text="New" onAction="#handleNewEmployee" />
-            <Button mnemonicParsing="false" text="Edit" onAction="#handleEditEmployee"/>
-            <Button mnemonicParsing="false" text="Delete" onAction="#handleDeleteEmployee"/>
+            <Button mnemonicParsing="false" onAction="#handleGetReports" text="Отчеты" />
+            <Button mnemonicParsing="false" onAction="#handleNewEmployee" text="Добавить" />
+            <Button mnemonicParsing="false" onAction="#handleEditEmployee" text="Редактировать" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Удалить" />
         </children>
     </HBox>
     </SplitPane>
