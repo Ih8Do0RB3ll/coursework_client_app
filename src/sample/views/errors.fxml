@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ErrorsPageController">
+    <SplitPane dividerPositions="0.7929" orientation="VERTICAL" prefHeight="400" prefWidth="600">
+    <TableView fx:id="err_table" prefHeight="337.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="error_code" prefWidth="300.20001220703125" text="Error Code" />
+            <TableColumn fx:id="error_name" prefWidth="299.79998779296875" text="Error Description" />
+        </columns>
+    </TableView>
+    <HBox layoutX="226.0" layoutY="358.0" prefHeight="26.0" prefWidth="245.0" spacing="10.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="15.0">
+        <children>
+            <Button mnemonicParsing="false" onAction="#handleNewError" text="New" />
+            <Button mnemonicParsing="false" onAction="#handleEditError" text="Edit" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteError" text="Delete" />
+            <Button mnemonicParsing="false" onAction="#handleStatistics" text="Get Statistics" />
+        </children>
+    </HBox>
+    </SplitPane>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ReportsPageController">
+    <SplitPane dividerPositions="0.7929" orientation="VERTICAL" prefHeight="400" prefWidth="600">
+    <TableView fx:id="rep_table" prefHeight="337.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="rep_date" prefWidth="154.39999693632126" text="Creation Date" />
+            <TableColumn fx:id="rep_creator" prefWidth="117.59999084472656" text="Author" />
+            <TableColumn fx:id="rep_dep" prefWidth="142.4000244140625" text="Department" />
+            <TableColumn fx:id="rep_level" prefWidth="92.79998779296875" text="Danger Level" />
+            <TableColumn fx:id="rep_error" prefWidth="91.20001220703125" text="Error" />
+        </columns>
+    </TableView>
+    <HBox layoutX="226.0" layoutY="358.0" prefHeight="54.0" prefWidth="598.0" spacing="10.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="15.0">
+        <children>
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleNewReport" text="New" />
+            <Button mnemonicParsing="false" onAction="#handleEditReport" text="Edit" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteReport" text="Delete" />
+        </children>
+    </HBox>
+    </SplitPane>
+</AnchorPane>
