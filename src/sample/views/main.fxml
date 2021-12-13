@@ -62,7 +62,7 @@
                               <Label prefHeight="107.0" prefWidth="320.0" text="Финансовый университет при Правительстве РФ" wrapText="true" GridPane.rowIndex="3" />
                               <Label prefHeight="122.0" prefWidth="322.0" text="группа ЗБ-ПИ19-2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Label prefHeight="128.0" prefWidth="328.0" text="Исходный код" GridPane.rowIndex="4" />
-                              <Label prefHeight="69.0" prefWidth="322.0" text="git link" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label prefHeight="69.0" prefWidth="322.0" text="https://github.com/Ih8Do0RB3ll/course_work_client" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                      </children></AnchorPane>
