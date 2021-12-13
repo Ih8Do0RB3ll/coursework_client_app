@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
    <center>
       <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <tabs>
-            <Tab fx:id="welcome" closable="true" onSelectionChanged="#eventHandler" text="Welcome">
+            <Tab fx:id="welcome" closable="true" onSelectionChanged="#eventHandler" text="Приветствие">
                 <content><fx:include fx:id="welcomePage" source="welcomePage.fxml" /></content>
             </Tab>
-          <Tab fx:id="report" closable="false" onSelectionChanged="#eventHandler" text="Reports">
+          <Tab fx:id="report" closable="false" onSelectionChanged="#eventHandler" text="Отчеты">
             <content>
               <fx:include fx:id="report_page" source="reports.fxml" />
             </content>
           </Tab>
-          <Tab fx:id="employee" closable="false" onSelectionChanged="#eventHandler" text="Employees">
+          <Tab fx:id="employee" closable="false" onSelectionChanged="#eventHandler" text="Сотрудники">
             <content>
               <fx:include fx:id="employee_page" source="employees.fxml" />
             </content>
           </Tab>
-            <Tab fx:id="departments" closable="false" onSelectionChanged="#eventHandler" text="Departments">
+            <Tab fx:id="departments" closable="false" onSelectionChanged="#eventHandler" text="Департаменты">
                 <content>
                     <fx:include fx:id="departments_page" source="departments.fxml" />
                 </content>
             </Tab>
-            <Tab fx:id="danger_level" closable="false" onSelectionChanged="#eventHandler" text="Danger Levels">
+            <Tab fx:id="danger_level" closable="false" onSelectionChanged="#eventHandler" text="Уровни угроз">
                 <content>
                     <fx:include fx:id="danger_level_page" source="dangerlevels.fxml" />
                 </content>
             </Tab>
-            <Tab fx:id="error" closable="false" onSelectionChanged="#eventHandler" text="Errors">
+            <Tab fx:id="error" closable="false" onSelectionChanged="#eventHandler" text="Ошибки">
                 <content>
                     <fx:include fx:id="error_page" source="errors.fxml" />
                 </content>
             </Tab>
-            <Tab fx:id="about" closable="false" onSelectionChanged="#eventHandler" text="About">
+            <Tab fx:id="about" closable="false" onSelectionChanged="#eventHandler" text="О программе">
                 <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -62,7 +69,7 @@
                               <Label prefHeight="107.0" prefWidth="320.0" text="Финансовый университет при Правительстве РФ" wrapText="true" GridPane.rowIndex="3" />
                               <Label prefHeight="122.0" prefWidth="322.0" text="группа ЗБ-ПИ19-2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Label prefHeight="128.0" prefWidth="328.0" text="Исходный код" GridPane.rowIndex="4" />
-                              <Label prefHeight="69.0" prefWidth="322.0" text="git link" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label prefHeight="69.0" prefWidth="322.0" text="https://github.com/Ih8Do0RB3ll/course_work_client" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                      </children></AnchorPane>
@@ -72,7 +79,7 @@
       </TabPane>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" onAction="#pressButton" prefHeight="26.0" prefWidth="608.0" style="-fx-background-color: red" text="Log out" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#pressButton" prefHeight="26.0" prefWidth="608.0" style="-fx-background-color: red" text="Выход из системы" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
