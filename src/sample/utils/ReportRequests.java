@@ -23,11 +23,7 @@ public class ReportRequests {
         String password = emp_json.get("password").getAsString();
         JsonObject dep = emp_json.get("department").getAsJsonObject();
         Departments departments = DepartmentsRequests.parsedep(dep);
-        JsonElement oldpass = emp_json.get("oldPasswords");
-        OldPasswords passold = (oldpass instanceof JsonNull)
-                ? new OldPasswords()
-                : OldPasswordsRequests.parsepass(oldpass.getAsJsonObject());
-        return new Employee(empid, empname, password, departments, passold);
+        return new Employee(empid, empname, password, departments);
     }
 
 

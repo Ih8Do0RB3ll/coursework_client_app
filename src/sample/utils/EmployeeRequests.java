@@ -4,10 +4,8 @@ package sample.utils;
 import com.google.gson.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import sample.models.DangerLevels;
 import sample.models.Departments;
 import sample.models.Employee;
-import sample.models.OldPasswords;
 
 public class EmployeeRequests {
     /**
@@ -30,11 +28,7 @@ public class EmployeeRequests {
                 String password = emp_json.get("password").getAsString();
                 JsonObject dep = emp_json.get("department").getAsJsonObject();
                 Departments departments = DepartmentsRequests.parsedep(dep);
-                JsonElement oldpass = emp_json.get("oldPasswords");
-                OldPasswords passold = (oldpass instanceof JsonNull)
-                        ? new OldPasswords()
-                        : OldPasswordsRequests.parsepass(oldpass.getAsJsonObject());
-                emp_data.add(new Employee(empid, empname, password, departments, passold));
+                emp_data.add(new Employee(empid, empname, password, departments));
             }
             return emp_data;
         }
@@ -51,11 +45,7 @@ public class EmployeeRequests {
             String password = result.get("password").getAsString();
             JsonObject dep = result.get("department").getAsJsonObject();
             Departments departments = DepartmentsRequests.parsedep(dep);
-            JsonElement oldpass = result.get("oldPasswords");
-            OldPasswords passold = (oldpass instanceof JsonNull)
-                    ? new OldPasswords()
-                    : OldPasswordsRequests.parsepass(oldpass.getAsJsonObject());
-            return new  Employee(empid, empname, password, departments, passold);
+            return new  Employee(empid, empname, password, departments);
         }
         else{
             return null;

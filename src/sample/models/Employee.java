@@ -13,7 +13,6 @@ public class Employee {
     private final StringProperty username;
     private final StringProperty password;
     private final ObjectProperty<Departments> department;
-    private final ObjectProperty<OldPasswords> old_password;
 
     public Employee(){
         this(null, null);
@@ -29,14 +28,12 @@ public class Employee {
         this.username = new SimpleStringProperty(username);
         this.password = new SimpleStringProperty(password);
         this.department = new SimpleObjectProperty<Departments>();
-        this.old_password = new SimpleObjectProperty<OldPasswords>();
     }
 
-    public Employee(Long id, String username, String password, Departments department, OldPasswords old_password){
+    public Employee(Long id, String username, String password, Departments department){
         this.username = new SimpleStringProperty(username);
         this.password = new SimpleStringProperty(password);
         this.department = new SimpleObjectProperty<>(department);
-        this.old_password = new SimpleObjectProperty<>(old_password);
         this.id = new SimpleLongProperty(id);
     }
 
@@ -99,15 +96,4 @@ public class Employee {
         this.department.set(department);
     }
 
-    public OldPasswords getOld_password() {
-        return old_password.get();
-    }
-
-    public ObjectProperty<OldPasswords> old_passwordProperty() {
-        return old_password;
-    }
-
-    public void setOld_password(OldPasswords old_password) {
-        this.old_password.set(old_password);
-    }
 }

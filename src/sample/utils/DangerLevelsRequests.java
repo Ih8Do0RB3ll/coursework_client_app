@@ -19,9 +19,9 @@ public class DangerLevelsRequests {
     private static final String URL = "http://localhost:8080/api/dangerLevels/";
 
     public static DangerLevels parselvl(JsonObject level){
-        Long lvlid = level.get("id").getAsLong();
-        String leveldes = level.get("description").getAsString();
-        return new DangerLevels(lvlid, leveldes);
+        Long lvlId = level.get("id").getAsLong();
+        String levelDes = level.get("description").getAsString();
+        return new DangerLevels(lvlId, levelDes);
     }
 
     public static ObservableList<DangerLevels> getAll(){
