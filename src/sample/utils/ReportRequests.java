@@ -27,7 +27,6 @@ public class ReportRequests {
     }
 
 
-
     public static ObservableList<Report> getAll(){
         ObservableList<Report> reports = FXCollections.observableArrayList();
         String conn = HTTPConnection.GetRequest(URL);
@@ -40,7 +39,8 @@ public class ReportRequests {
                 Employee rep_creator = parseemp(report_json.get("employee").getAsJsonObject());
                 DangerLevels rep_level = DangerLevelsRequests.parselvl(report_json.get("dangerLevel").getAsJsonObject());
                 Errors rep_error = ErrorsRequests.parseerror(report_json.get("errors").getAsJsonObject());
-                reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error) );
+                String rep_description = report_json.get("report_description").getAsString();
+                reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error, rep_description) );
             }
             return reports;
         }else return null;
@@ -78,7 +78,8 @@ public class ReportRequests {
                 Employee rep_creator = parseemp(report_json.get("employee").getAsJsonObject());
                 DangerLevels rep_level = DangerLevelsRequests.parselvl(report_json.get("dangerLevel").getAsJsonObject());
                 Errors rep_error = ErrorsRequests.parseerror(report_json.get("errors").getAsJsonObject());
-                reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error));
+                String rep_description = report_json.get("report_description").getAsString();
+                reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error, rep_description));
             } else {
                 JsonArray result = json.getAsJsonArray();
                 for (int i = 0; i < result.size(); i++) {
@@ -88,7 +89,8 @@ public class ReportRequests {
                     Employee rep_creator = parseemp(report_json.get("employee").getAsJsonObject());
                     DangerLevels rep_level = DangerLevelsRequests.parselvl(report_json.get("dangerLevel").getAsJsonObject());
                     Errors rep_error = ErrorsRequests.parseerror(report_json.get("errors").getAsJsonObject());
-                    reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error));
+                    String rep_description = report_json.get("report_description").getAsString();
+                    reports.add(new Report(rep_id, rep_date, rep_creator, rep_level, rep_error, rep_description));
                 }
             }
             return reports;

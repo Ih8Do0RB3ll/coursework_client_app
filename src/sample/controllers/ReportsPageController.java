@@ -40,6 +40,9 @@ public class ReportsPageController {
     private  TableColumn<Report, Number> rep_error;
 
     @FXML
+    private  TableColumn<Report, String> rep_description;
+
+    @FXML
     private Button newButton;
 
     private Main mainApp;
@@ -60,6 +63,7 @@ public class ReportsPageController {
         rep_dep.setCellValueFactory(cellData -> cellData.getValue().employeeProperty().get().departmentProperty().get().department_nameProperty());
         rep_level.setCellValueFactory(cellData -> cellData.getValue().danger_levelProperty().get().descriptionProperty());
         rep_error.setCellValueFactory(cellData -> cellData.getValue().errorProperty().get().error_codeProperty());
+        rep_description.setCellValueFactory(cellData -> cellData.getValue().reportDescriptionProperty());
         if (this.employee == null){
             newButton.setDisable(true);
         }

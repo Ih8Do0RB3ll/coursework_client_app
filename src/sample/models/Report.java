@@ -3,6 +3,7 @@ package sample.models;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import javafx.beans.property.*;
+import javafx.scene.text.Text;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -19,23 +20,35 @@ public class Report {
     private final ObjectProperty<Employee> employee;
     private final ObjectProperty<DangerLevels>  danger_level;
     private final ObjectProperty<Errors> error;
+    private final StringProperty rep_description;
 
-
-    public Report(){
+    public Report(Long rep_id, LocalDate rep_date, Employee rep_creator, DangerLevels rep_level, Errors rep_error, StringProperty rep_description){
         this.id = null;
         this.creation_date = new SimpleObjectProperty<LocalDate>();
         this.employee = new SimpleObjectProperty<Employee>();
         this.danger_level = new SimpleObjectProperty<DangerLevels>();
         this.error = new SimpleObjectProperty<Errors>();
+        this.rep_description = new SimpleStringProperty();
     }
 
-    public Report(Long id, LocalDate creation_date, Employee employee, DangerLevels danger_level, Errors error){
+    public Report(Long id, LocalDate creation_date, Employee employee, DangerLevels danger_level, Errors error, String rep_description){
         this.id = new SimpleLongProperty(id);
         this.creation_date = new SimpleObjectProperty<>(creation_date);
         this.employee = new SimpleObjectProperty<>(employee);
         this.danger_level = new SimpleObjectProperty<>(danger_level);
         this.error = new SimpleObjectProperty<>(error);
+        this.rep_description = new SimpleStringProperty(rep_description);
     }
+
+     public Report() {
+        this.id = null;
+        this.creation_date = new SimpleObjectProperty<LocalDate>();
+        this.employee = new SimpleObjectProperty<Employee>();
+        this.danger_level = new SimpleObjectProperty<DangerLevels>();
+        this.error = new SimpleObjectProperty<Errors>();
+        this.rep_description = new SimpleStringProperty();
+    }
+
 
     public String toJson() {
 
@@ -49,6 +62,7 @@ public class Report {
         map.put("employee", new Gson().fromJson(employee.get().toJson(), JsonObject.class));
         map.put("dangerLevel", new Gson().fromJson(danger_level.get().toJson(), JsonObject.class));
         map.put("errors", new Gson().fromJson(error.get().toJson(), JsonObject.class));
+        map.put("report_description", rep_description.get());
         Gson gson = new Gson();
         return gson.toJson(map);
     }
@@ -109,4 +123,13 @@ public class Report {
     public void setError(Errors error) {
         this.error.set(error);
     }
+
+    public String getReportDescription() {
+        return rep_description.get();
+    }
+
+    public StringProperty reportDescriptionProperty() {return rep_description;
+    }
+    public void setRep_description(String rep_description) {
+        this.rep_description.set(rep_description); }
 }
