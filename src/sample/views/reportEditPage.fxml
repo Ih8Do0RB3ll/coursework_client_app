@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -37,7 +38,7 @@
                 <ChoiceBox fx:id="errorBox" prefHeight="26.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <ChoiceBox fx:id="dangerLevelBox" prefHeight="26.0" prefWidth="246.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Описание" GridPane.rowIndex="5" />
-            <TextField fx:id="descriptionField" prefHeight="225.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextArea fx:id="descriptionArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             </children>
         </GridPane>
         <ButtonBar layoutX="71.0" layoutY="465.0" AnchorPane.leftAnchor="71.0" AnchorPane.topAnchor="465.0">
