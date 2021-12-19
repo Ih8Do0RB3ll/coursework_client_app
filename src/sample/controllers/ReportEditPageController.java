@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import org.w3c.dom.Text;
 import sample.models.DangerLevels;
@@ -42,7 +43,7 @@ public class ReportEditPageController {
     private ChoiceBox<String> dangerLevelBox;
 
     @FXML
-    private TextField descriptionField;
+    private TextArea descriptionArea;
 
     private Stage dialogueStage;
     private Report currentReport;
@@ -97,7 +98,7 @@ public class ReportEditPageController {
             errorBox.setValue(report.getError().getError_code() + " - " + report.getError().getDescription());
         }
         if (report.reportDescriptionProperty().get() != null) {
-            descriptionField.setText(report.getReportDescription());
+            descriptionArea.setText(report.getReportDescription());
         }
     }
 
@@ -122,7 +123,7 @@ public class ReportEditPageController {
             currentReport.setCreation_date(LocalDate.parse(creationDateField.getText()));
             currentReport.setError(ErrorsRequests.getById(keys(getErrorValues(), errorBox.getValue()).findAny().get()));
             currentReport.setDanger_level(DangerLevelsRequests.getById(keys(getDangerLevelValues(), dangerLevelBox.getValue()).findAny().get()));
-            currentReport.setRep_description(descriptionField.getText());
+            currentReport.setRep_description(descriptionArea.getText());
             okClicked = true;
             dialogueStage.close();
         }
