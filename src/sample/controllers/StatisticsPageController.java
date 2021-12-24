@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
@@ -43,5 +44,7 @@ public class StatisticsPageController {
             series.getData().add(new XYChart.Data<String, Number>(entry.getKey().toString(), entry.getValue()));
         }
         stat.getData().add(series);
+        stat.setTitle("Статистика выявленых угроз");
+        stat.setLegendVisible(true);
     }
 }

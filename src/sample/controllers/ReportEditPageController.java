@@ -141,11 +141,11 @@ public class ReportEditPageController {
         String errorMessage = "";
 
         if (errorBox.getValue() == null){
-            errorMessage += "No job input, ";
+            errorMessage += "Поле выбора ошибки не может быть пустым\n";
         }
 
         if (dangerLevelBox.getValue() == null){
-            errorMessage += "No office input";
+            errorMessage += "Поле уровня опасности не может быть пустым";
         }
 
         if (errorMessage.length()==0){

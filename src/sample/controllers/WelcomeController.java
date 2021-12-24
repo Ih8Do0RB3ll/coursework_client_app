@@ -31,7 +31,7 @@ public class WelcomeController{
     public void initialize(Stage stage, Employee emp){
         this.stage = stage;
         this.emp = emp;
-        //System.out.println(" welcome controller init");
+       // System.out.println(emp);
         showWelcome(emp);
     }
 

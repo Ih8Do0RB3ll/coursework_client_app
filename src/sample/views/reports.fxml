@@ -14,8 +14,8 @@
             <TableColumn fx:id="rep_date" prefWidth="103.0" text="Дата создания" />
             <TableColumn fx:id="rep_creator" prefWidth="89.0" text="Автор" />
             <TableColumn fx:id="rep_dep" prefWidth="142.0" text="Департамент" />
-            <TableColumn fx:id="rep_level" prefWidth="114.0" text="Уровень угрозы" />
-            <TableColumn fx:id="rep_error" prefWidth="153.0" text="Код ошибки" />
+            <TableColumn fx:id="rep_level" prefWidth="114.0" text="Уровень опасности" />
+            <TableColumn fx:id="rep_error" prefWidth="153.0" text="Код угрозы" />
             <TableColumn fx:id="rep_description" prefWidth="75.0" text="Описание" visible="false" />
         </columns>
     </TableView>

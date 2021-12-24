@@ -33,12 +33,12 @@
                     <fx:include fx:id="departments_page" source="departments.fxml" />
                 </content>
             </Tab>
-            <Tab fx:id="danger_level" closable="false" onSelectionChanged="#eventHandler" text="Уровни угроз">
+            <Tab fx:id="danger_level" closable="false" onSelectionChanged="#eventHandler" text="Уровни опасности">
                 <content>
                     <fx:include fx:id="danger_level_page" source="dangerlevels.fxml" />
                 </content>
             </Tab>
-            <Tab fx:id="error" closable="false" onSelectionChanged="#eventHandler" text="Ошибки">
+            <Tab fx:id="error" closable="false" onSelectionChanged="#eventHandler" text="Угрозы">
                 <content>
                     <fx:include fx:id="error_page" source="errors.fxml" />
                 </content>
