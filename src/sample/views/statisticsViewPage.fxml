@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="323.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.StatisticsPageController">
+<AnchorPane prefHeight="323.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.StatisticsPageController">
    <children>
-      <BarChart fx:id="stat" prefHeight="323.0" prefWidth="500.0">
+      <BarChart fx:id="stat" horizontalGridLinesVisible="false" prefHeight="323.0" prefWidth="500.0" verticalZeroLineVisible="false">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis label="Код угрозы" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis label="Количество" minorTickVisible="false" side="LEFT" />
         </yAxis>
       </BarChart>
      

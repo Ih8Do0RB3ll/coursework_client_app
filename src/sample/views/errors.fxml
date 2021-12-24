@@ -12,8 +12,8 @@
     <SplitPane dividerPositions="0.7929" orientation="VERTICAL" prefHeight="400" prefWidth="600">
     <TableView fx:id="err_table" prefHeight="337.0" prefWidth="600.0">
         <columns>
-            <TableColumn fx:id="error_code" prefWidth="147.0" text="Код ошибки" />
-            <TableColumn fx:id="error_name" prefWidth="451.0" text="Описание ошибки" />
+            <TableColumn fx:id="error_code" prefWidth="147.0" text="Код угрозы" />
+            <TableColumn fx:id="error_name" prefWidth="451.0" text="Описание угрозы" />
         </columns>
          <opaqueInsets>
             <Insets />

@@ -72,18 +72,18 @@ public class DangerLevelsPageController {
             }else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.initOwner(stage);
-                alert.setTitle("Error");
-                alert.setHeaderText("Could not delete this object");
-                alert.setContentText("Try again");
+                alert.setTitle("Ошибка");
+                alert.setHeaderText("Невозможно удалить данный объект");
+                alert.setContentText("Попробуйте снова!");
                 alert.showAndWait();
             }
 
         }else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(stage);
-            alert.setTitle("Error");
-            alert.setHeaderText("Nothing to delete");
-            alert.setContentText("Select object to delete");
+            alert.setTitle("Ошибка");
+            alert.setHeaderText("Нечего удалять");
+            alert.setContentText("Выберите объект для удаления");
             alert.showAndWait();
         }
     }

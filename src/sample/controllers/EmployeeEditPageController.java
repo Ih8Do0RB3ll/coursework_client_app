@@ -91,18 +91,21 @@ public class EmployeeEditPageController {
     public boolean isInputValid(){
         String errorMessage = "";
         if(usernameField.getText() == null){
-            errorMessage += "No input";
+            errorMessage += "Поле 'имя пользователя' не может быть пустым\n";
         }
         if(depBox.getValue() == null){
-            errorMessage += "No input";
+            errorMessage += "Вы не указали департамент пользователя\n";
+        }
+        if(passwordField.getText().isEmpty()){
+            errorMessage += "Поле 'Пароль' не может быть пустым";
         }
         if (errorMessage.length()==0){
             return true;
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Error!");
-            alert.setHeaderText("Wrong input!");
+            alert.setTitle("Ошибка!");
+            alert.setHeaderText("Неверный ввод!");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();
