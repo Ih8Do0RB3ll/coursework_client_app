@@ -98,18 +98,18 @@ public class ReportsPageController {
             }else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.initOwner(stage);
-                alert.setTitle("Error");
-                alert.setHeaderText("Could not delete this report");
-                alert.setContentText("Try again");
+                alert.setTitle("Ошибка");
+                alert.setHeaderText("Не удалось удалить этот отчет");
+                alert.setContentText("Попробуйте снова");
                 alert.showAndWait();
             }
 
         }else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(stage);
-            alert.setTitle("Error");
-            alert.setHeaderText("Nothing to delete");
-            alert.setContentText("Select object to delete");
+            alert.setTitle("Ошибка");
+            alert.setHeaderText("Нечего удалять");
+            alert.setContentText("Выберите объект для удаления");
             alert.showAndWait();
         }
     }

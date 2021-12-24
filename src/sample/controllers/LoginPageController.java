@@ -45,9 +45,9 @@ public class LoginPageController {
             else{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.initOwner(stage);
-                alert.setTitle("Error");
-                alert.setHeaderText("Wrong input");
-                alert.setContentText("No such username or password is incorrect");
+                alert.setTitle("Ошибка");
+                alert.setHeaderText("Неверный ввод");
+                alert.setContentText("Неправильное имя пользователя или пароль");
                 alert.showAndWait();
             }
         }
@@ -59,11 +59,11 @@ public class LoginPageController {
     private Boolean isInputValid(){
         String errorMessage = "";
         if(userField.getText() == null || userField.getText().length() == 0){
-            errorMessage += "No username input\n";
+            errorMessage += "Не введено имя пользователя\n";
         }
 
         if(passwordField.getText() == null || passwordField.getText().length() == 0){
-            errorMessage += "No password input\n";
+            errorMessage += "Не введен пароль\n";
         }
 
         if (errorMessage.length()==0){
@@ -71,8 +71,8 @@ public class LoginPageController {
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(stage);
-            alert.setTitle("Error");
-            alert.setHeaderText("Wrong input");
+            alert.setTitle("Ошибка");
+            alert.setHeaderText("Неверный ввод");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();

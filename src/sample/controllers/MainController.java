@@ -26,7 +26,6 @@ public class MainController {
     private Main main;
     private Stage stage;
     private Employee emp;
-
     @FXML
     private Tab welcome;
 
@@ -69,7 +68,6 @@ public class MainController {
         this.stage = stage;
        // System.out.println(emp.getUsername() + " main controller init");
         this.emp = emp;
-
     }
 
     @FXML
@@ -169,7 +167,7 @@ public class MainController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/statisticsViewPage.fxml"));
         AnchorPane statistics = (AnchorPane) loader.load();
         Stage dialougeStage = new Stage();
-        dialougeStage.setTitle("STATISTICS");
+        dialougeStage.setTitle("Статистика");
         dialougeStage.initOwner(stage);
         dialougeStage.initModality(Modality.WINDOW_MODAL);
         Scene scene = new Scene(statistics);
@@ -183,7 +181,7 @@ public class MainController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/reports.fxml"));
         AnchorPane reportsPage = (AnchorPane) loader.load();
         Stage dialougeStage = new Stage();
-        dialougeStage.setTitle("Reports");
+        dialougeStage.setTitle("Отчеты");
         dialougeStage.initOwner(stage);
         dialougeStage.initModality(Modality.WINDOW_MODAL);
         Scene scene = new Scene(reportsPage);

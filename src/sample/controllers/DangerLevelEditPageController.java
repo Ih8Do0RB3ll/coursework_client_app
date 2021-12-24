@@ -52,15 +52,15 @@ public class DangerLevelEditPageController {
     private boolean isInputValid(){
         String errorMessage = "";
         if(levelField.getText() == null){
-            errorMessage += "No input";
+            errorMessage += "Поле ввода 'Уровень опасности' не может быть пустым ";
         }
         if (errorMessage.length()==0){
             return true;
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Error!");
-            alert.setHeaderText("Wrong input!");
+            alert.setTitle("Ошибка!");
+            alert.setHeaderText("Неверный ввод!");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();

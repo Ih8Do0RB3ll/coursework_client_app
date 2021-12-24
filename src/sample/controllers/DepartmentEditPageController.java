@@ -59,8 +59,8 @@ public class DepartmentEditPageController {
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Error!");
-            alert.setHeaderText("Wrong input!");
+            alert.setTitle("Ошибка!");
+            alert.setHeaderText("Неверный ввод!");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();

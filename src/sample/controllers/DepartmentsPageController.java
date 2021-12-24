@@ -73,9 +73,9 @@ public class DepartmentsPageController {
             }else{
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.initOwner(stage);
-                alert.setTitle("Error");
-                alert.setHeaderText("Could not delete this object");
-                alert.setContentText("Try again");
+                alert.setTitle("Ошибка");
+                alert.setHeaderText("Невозможно удалить данный объект");
+                alert.setContentText("Попробуйте снова");
                 alert.showAndWait();
             }
 

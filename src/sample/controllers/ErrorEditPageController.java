@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.models.Errors;
 
+import java.io.IOException;
+
 public class ErrorEditPageController {
     @FXML
     private TextField error_codeField;
@@ -40,7 +42,7 @@ public class ErrorEditPageController {
     private void handleCancel() { dialogStage.close(); }
 
     @FXML
-    private void handleOk(){
+    private void handleOk() {
         if(isInputValid()){
             currentError.setError_code(Long.parseLong(error_codeField.getText()));
             System.out.println(currentError.getError_code());
@@ -52,19 +54,23 @@ public class ErrorEditPageController {
 
     private boolean isInputValid() {
         String errorMessage = "";
-        if(error_codeField.getText() == null){
-            errorMessage += "No input";
+        if(error_codeField.getText().equals("")){
+            errorMessage += "Поле кода угрозы не должно быть пустым\n";
         }
-        if (er_descriptionField.getText() == null) {
-            errorMessage += "No input";
+        if (er_descriptionField.getText().equals("")) {
+            errorMessage += "Поле описания угрозы не должно быть пустым\n";
         }
-        if (errorMessage.length() == 0) {
+        if (!error_codeField.getText().matches("[0-9]+") && !error_codeField.getText().equals("")){
+            errorMessage += "Код угрозы не может содержать символы и буквы";
+        }
+       // System.out.println(error_codeField.getText());
+        if (errorMessage.length()==0) {
             return true;
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initOwner(dialogStage);
-            alert.setTitle("Error!");
-            alert.setHeaderText("Wrong input!");
+            alert.setTitle("Ошибка!");
+            alert.setHeaderText("Неверный ввод!");
             alert.setContentText(errorMessage);
 
             alert.showAndWait();
